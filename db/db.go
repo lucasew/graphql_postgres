@@ -1,24 +1,27 @@
 package db
 
 import (
-    _ "github.com/jinzhu/gorm/dialects/postgres"
-    "github.com/jinzhu/gorm"
+	// import suport for postgress
+	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
 )
 
+// DB initialized gorm database ready to use by the app
 var DB *gorm.DB
-// Sinaliza que o db foi inicializado, garante que as AutoMigrations não vão rodar até o banco estar inicializado
-var dbDone = make(chan(interface{}))
+
+// Ensure the migrations happen after DB initialization
+var dbDone = make(chan (interface{}))
 
 func init() {
-    var err error
-    DB, err = gorm.Open("postgres", "host=localhost user=lucas59356 dbname=gorm sslmode=disable")
-    DB.LogMode(true)
-    if err != nil {
-        panic(err)
-    }
-    go func () {
-        for {
-            dbDone <- nil
-        }
-    }()
+	var err error
+	DB, err = gorm.Open("postgres", "host=localhost user=lucas59356 dbname=gorm sslmode=disable")
+	DB.LogMode(true)
+	if err != nil {
+		panic(err)
+	}
+	go func() {
+		for {
+			dbDone <- nil
+		}
+	}()
 }

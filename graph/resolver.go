@@ -1,3 +1,4 @@
 package graph
 
-type Resolver struct {}
+// Resolver container for all graphql queries and mutations
+type Resolver struct{}
