@@ -12,6 +12,7 @@ var dbDone = make(chan(interface{}))
 func init() {
     var err error
     DB, err = gorm.Open("postgres", "host=localhost user=lucas59356 dbname=gorm sslmode=disable")
+    DB.LogMode(true)
     if err != nil {
         panic(err)
     }

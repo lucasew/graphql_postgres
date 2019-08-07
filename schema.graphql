@@ -1,13 +1,41 @@
 schema {
-    query: Query
+    query: Query,
+    mutation: Mutation
 }
 
 type Query {
     getPessoa(id: Int): Pessoa
+    getCasa(id: Int): Casa
+    pessoas: [Pessoa]
+    casas: [Casa]
+}
+
+type Mutation {
+    addPessoa(p: PessoaInput): Pessoa
+    addCasa(c: CasaInput): Casa
+
+}
+
+input PessoaInput {
+    nome: String
+    sobrenome: String
+}
+
+input CasaInput {
+    numero: Int
+    rua: String
+    pessoas: [PessoaInput]
 }
 
 type Pessoa {
     id: Int
     nome: String
     sobrenome: String
+}
+
+type Casa {
+    id: Int
+    numero: Int
+    rua: String
+    pessoas: [Pessoa]
 }

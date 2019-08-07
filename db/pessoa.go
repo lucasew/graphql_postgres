@@ -1,5 +1,17 @@
 package db
 
+type PessoaInput struct {
+    Nome *string
+    Sobrenome *string
+}
+
+func (p PessoaInput) Convert() Pessoa {
+    return Pessoa{
+        Nome: *p.Nome,
+        Sobrenome: *p.Sobrenome,
+    }
+}
+
 type Pessoa struct {
     Id int32
     Nome string
@@ -19,6 +31,8 @@ func (p Pessoa) SOBRENOME() *string {
 }
 
 func init() {
-    <-dbDone
-    DB.Debug().AutoMigrate(&Pessoa{})
+    go func () {
+        <-dbDone
+        DB.Debug().AutoMigrate(&Pessoa{})
+    }()
 }
