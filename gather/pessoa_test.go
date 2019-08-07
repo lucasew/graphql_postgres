@@ -2,8 +2,8 @@ package gather_test
 
 import (
     "testing"
-    "github.com/lucasew/graphql_postgress/gather"
-    "github.com/lucasew/graphql_postgress/db"
+    "github.com/lucasew/graphql_postgres/gather"
+    "github.com/lucasew/graphql_postgres/db"
     "fmt"
 )
 

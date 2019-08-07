@@ -1,7 +1,7 @@
 package main
 
 import (
-    "github.com/lucasew/graphql_postgress/graph"
+    "github.com/lucasew/graphql_postgres/graph"
     "net/http"
     gql "github.com/graph-gophers/graphql-go"
     "github.com/graph-gophers/graphql-go/relay"

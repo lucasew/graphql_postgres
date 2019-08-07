@@ -1,7 +1,7 @@
 package gather
 
 import (
-    "github.com/lucasew/graphql_postgress/db"
+    "github.com/lucasew/graphql_postgres/db"
 )
 
 type Casa struct {}

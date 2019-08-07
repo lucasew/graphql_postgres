@@ -1,4 +1,4 @@
-module github.com/lucasew/graphql_postgress
+module github.com/lucasew/graphql_postgres
 
 go 1.12
 

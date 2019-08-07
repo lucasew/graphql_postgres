@@ -1,8 +1,8 @@
 package graph
 
 import (
-    "github.com/lucasew/graphql_postgress/db"
-    "github.com/lucasew/graphql_postgress/gather"
+    "github.com/lucasew/graphql_postgres/db"
+    "github.com/lucasew/graphql_postgres/gather"
     "github.com/lucasew/golog"
 )
 
